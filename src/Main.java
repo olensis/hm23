@@ -49,13 +49,13 @@ public class Main {
         System.out.println(guide.entrySet());
 
         //2
-        ProductList apple = new ProductList("Яблоко", 50, 2);
-        ProductList cola = new ProductList("Кола", 150, 3);
-        ProductList meat = new ProductList("Мясо", 200, 1);
-        ProductList banan = new ProductList("Банан", 100, 5);
-        ProductList cucumber = new ProductList("Огурец", 25, 5);
-        ProductList potato = new ProductList("Картошка", 10, 10);
-        Product product = new Product();
+        Product apple = new Product("Яблоко", 50, 2);
+        Product cola = new Product("Кола", 150, 3);
+        Product meat = new Product("Мясо", 200, 1);
+        Product banan = new Product("Банан", 100, 5);
+        Product cucumber = new Product("Огурец", 25, 5);
+        Product potato = new Product("Картошка", 10, 10);
+        ProductList product = new ProductList();
         product.addList(apple);
         product.addList(cola);
         product.addList(meat);
@@ -64,8 +64,8 @@ public class Main {
 
 //        System.out.println(product.getLists());
 
-        HashMap<ProductList, Integer> products = new HashMap<>();
-        ProductList recipe = new ProductList();
+        HashMap<Product, Integer> products = new HashMap<>();
+        Product recipe = new Product();
         products.put(banan, 2);
         products.put(apple,3);
 
