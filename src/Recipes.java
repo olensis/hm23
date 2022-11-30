@@ -6,8 +6,8 @@ import java.util.Set;
 public class Recipes {
     private int totalCosts;
     private String nameRecipes;
-    private Set<ProductList> lists = new HashSet<>();
-    private HashMap<ProductList, Integer> products = new HashMap<ProductList, Integer>();
+    private Set<Product> lists = new HashSet<>();
+    private HashMap<Product, Integer> products = new HashMap<Product, Integer>();
     private boolean bought = false;
 
     public Recipes(String name, int cost, int weight) {
@@ -21,12 +21,12 @@ public class Recipes {
         return nameRecipes;
     }
 
-    public Set<ProductList> getLists() {
+    public Set<Product> getLists() {
         return lists;
     }
 
 
-    public Recipes(String nameRecipes, HashMap<ProductList, Integer> products) {
+    public Recipes(String nameRecipes, HashMap<Product, Integer> products) {
         this.nameRecipes = nameRecipes;
         this.products = products;
         this.totalCosts = getTotalCosts();
@@ -56,15 +56,15 @@ public class Recipes {
         return totalCosts;
     }
 
-    public HashMap<ProductList, Integer> getProducts() {
+    public HashMap<Product, Integer> getProducts() {
         return products;
     }
 
-    public void addProducts(ProductList product, int i) {
+    public void addProducts(Product product, int i) {
         products.put(product, 1);
     }
 
-    public void setProducts(HashMap<ProductList, Integer> products) {
+    public void setProducts(HashMap<Product, Integer> products) {
         this.products = products;
     }
 
@@ -82,7 +82,7 @@ public class Recipes {
     }
     public void calculateCost() {
         int total = 0;
-        for (ProductList product : products.keySet() ) {
+        for (Product product : getProducts().keySet() ) {
             int i =( product.getWeight() * product.getCost())* products.get(product);
             total += i;
         }
